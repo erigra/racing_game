@@ -3,8 +3,7 @@ import pygame
 from random import randint
 
 class Car():
-    def __init__(self, lane, speed, pos):
-        self.lane = lane       
+    def __init__(self, speed, pos):       
         self.speed = speed
         self.pos = pos
         self.in_lane = True
@@ -72,7 +71,7 @@ def main():
                 exit()
 
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_LEFT and player_car.lane !=1:
+                if event.key == pygame.K_LEFT:
                     change_lane = "left"
                     player_car.in_lane = False
                 if event.key == pygame.K_RIGHT:
