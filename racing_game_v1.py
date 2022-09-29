@@ -41,8 +41,6 @@ def handle_player_car_movement(change_lane, player_car):
             player_car.pos.x -= 10
         if change_lane == "right" and player_car.pos.x != LANE_POSITIONS[2]:
             player_car.pos.x += 10
-           
-def check_car_position(player_car):
     if player_car.pos.x in LANE_POSITIONS:
         player_car.in_lane = True
     
@@ -61,7 +59,7 @@ def main():
     
     change_lane=""
     player_pos = pygame.Rect(280, 800, 40, 100)
-    player_car = Car(2,player_car_speed, player_pos)
+    player_car = Car(player_car_speed, player_pos)
     
     
     while True:
@@ -83,7 +81,7 @@ def main():
         
         
         handle_player_car_movement(change_lane, player_car)
-        check_car_position(player_car)
+        # check_car_position(player_car)
 
         print(player_car.pos.x)                                                 # Debug code
         update_screen(SCREEN, player_car)
